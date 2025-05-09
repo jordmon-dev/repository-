@@ -1,5 +1,8 @@
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -10,9 +13,10 @@ public class boletaServicio {
     private String email;
     private String direccion;
     private int telefono;
+    private LocalDateTime fecha;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType)
     
     public boletaServicio() {
     }
@@ -45,6 +49,13 @@ public class boletaServicio {
     }
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
     }
 
 }
